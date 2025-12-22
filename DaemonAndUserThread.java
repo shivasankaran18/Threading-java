@@ -33,6 +33,8 @@ public class DaemonAndUserThread
       daemonThread.setDaemon(true);
 
       daemonThread.start();
+
+      //default priority of thread is 5
       userThread.start();
 
       userThread.join();
