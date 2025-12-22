@@ -35,7 +35,8 @@ public class WaitAndNotify
    {
       Shared shared=new Shared();
 
-      ExecutorService executor=Executors.newFixedThreadPool(4);
+      //thread pool. thread pool is used for creating multiple reusable threads.
+      ExecutorService executor=Executors.newFixedThreadPool(3);
 
       Runnable r1=()->{
          shared.waitingCall();
@@ -68,6 +69,9 @@ public class WaitAndNotify
       executor.submit(r2);
       executor.submit(r3);
       executor.submit(r3);
+
+
+      //move threads to the terminated state
       executor.shutdown();
 
 
