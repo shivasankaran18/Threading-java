@@ -2,6 +2,8 @@ public class DaemonAndUserThread
 {
    public static void main(String args[]) throws InterruptedException
    {
+      int cores=Runtime.getRuntime().availableProcessors();
+      System.out.println("Number of available cores : "+cores);
       Thread userThread=new Thread(()->{
          try
          {
